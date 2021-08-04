@@ -53,9 +53,6 @@ class OpenSSLVerifier
         // state whether signature is okay or not
         $ok = (int) \openssl_verify($message, $signature, $pubkeyid);
 
-        // free the key from memory
-        \openssl_free_key($pubkeyid);
-
         if ($ok === 1) {
             return true;
         }
